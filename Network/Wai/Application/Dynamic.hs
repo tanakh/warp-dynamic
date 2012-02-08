@@ -3,7 +3,8 @@
 module Network.Wai.Application.Dynamic (
   Config(..),
   warpd,
-  def,
+  
+  def, nullApp,
   ) where
 
 import qualified Config.Dyre as Dyre
@@ -16,12 +17,14 @@ import Network.Wai.Handler.Warp
 -- | HTTP config
 data Config
   = Config
-    { configApplication :: Application -- ^ Application to exec
+    { warpSettings :: Settings    -- ^ Warp settings
+    , application  :: Application -- ^ Application to serve
     }
 
 instance Default Config where
   def = Config
-    { configApplication = nullApp
+    { warpSettings = defaultSettings
+    , application = nullApp
     }
 
 -- | Null application (always returns 404)
@@ -38,4 +41,4 @@ warpd = Dyre.wrapMain $ Dyre.defaultParams
 
 realMain :: Config -> IO ()
 realMain Config {..} = do
-  run 3000 configApplication
+  runSettings warpSettings application
