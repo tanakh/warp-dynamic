@@ -7,7 +7,7 @@ module Network.Wai.Application.Dynamic (
 
 import qualified Config.Dyre as Dyre
 import Network.Wai
-import Network.Wai.Application.Static
+import Network.Wai.Application.Null
 import Network.Wai.Handler.Warp
 
 data Config
@@ -24,5 +24,4 @@ warpd = Dyre.wrapMain $ Dyre.defaultParams
 
 realMain :: Config -> IO ()
 realMain Config {..} = do
-  run 3000 $ configMiddleware $
-    staticApp defaultFileServerSettings
+  run 3000 $ configMiddleware appNull

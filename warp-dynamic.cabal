@@ -1,5 +1,5 @@
 name:                warp-dynamic
-version:             0.1.0.0
+version:             0.0.0
 synopsis:            Dynamic configurable warp HTTP server
 
 description:         Dynamic configurable warp HTTP server
@@ -18,8 +18,8 @@ library
   build-depends:       base           == 4.*
                      , dyre           == 0.8.*
                      , wai            == 1.1.*
-                     , wai-app-static == 1.1.*
                      , warp           == 1.1.*
+                     , wai-app-null
 
   exposed-modules:     Network.Wai.Application.Dynamic
 
