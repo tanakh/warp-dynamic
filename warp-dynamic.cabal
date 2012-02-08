@@ -1,5 +1,5 @@
 name:                warp-dynamic
-version:             0.0.0
+version:             0.0.1
 synopsis:            Dynamic configurable warp HTTP server
 
 description:         Dynamic configurable warp HTTP server
@@ -16,6 +16,7 @@ cabal-version:       >=1.8
 
 library
   build-depends:       base           == 4.*
+                     , data-default
                      , dyre           == 0.8.*
                      , http-types     == 0.6.*
                      , wai            == 1.1.*
