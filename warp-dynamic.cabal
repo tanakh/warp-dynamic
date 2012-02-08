@@ -17,9 +17,9 @@ cabal-version:       >=1.8
 library
   build-depends:       base           == 4.*
                      , dyre           == 0.8.*
+                     , http-types     == 0.6.*
                      , wai            == 1.1.*
                      , warp           == 1.1.*
-                     , wai-app-null
 
   exposed-modules:     Network.Wai.Application.Dynamic
 
