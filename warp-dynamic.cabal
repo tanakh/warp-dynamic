@@ -1,5 +1,5 @@
 name:                warp-dynamic
-version:             0.0.1
+version:             0.1.0
 synopsis:            Dynamic configurable warp HTTP server
 
 description:         Dynamic configurable warp HTTP server
@@ -15,6 +15,10 @@ build-type:          Simple
 cabal-version:       >=1.8
 
 extra-source-files:  config/warpd.hs
+
+source-repository head
+  type:                git
+  location:            git://github.com/tanakh/warp-dynamic.git
 
 library
   build-depends:       base           == 4.*
